@@ -1,0 +1,105 @@
+TextPipe Single User Edition 10.7
+Purchased by: David Haslam, David Haslam
+
+Filter Title: T:\Custom\Turkish\Transliterate Turkish Paratext SFM files to Kirilic.fll
+
+Filter List
+-----------
+Filter options
+|  [ ] Log to file
+|  [ ] Append to logfile
+|  Log filename: textpipe.log
+|  Threshold 500
+|  [ ] Log comment filters
+|
+|--Input from file(s)
+|     [ ] Confirm before processing each file
+|     [ ] Confirm before processing read/only files
+|     [ ] Delete input files after processing
+|     [ ] Process inside compressed files
+|     Process binary files
+|   
+|--Comment...
+|  |  Transliterate Turkish Paratext SFM files to Kirilic
+|  |  
+|  |  Assumes the following:
+|  |  
+|  |    subst i: <inputpath>
+|  |    subst o: <outputpath>
+|  |
+|  |--Comment...
+|  |     Revision History:
+|  |     
+|  |     2011-12-13 Created using updated replace list 
+|  |     2019-01-23 Restrict to lines NOT matching pattern simplified
+|  |     2019-01-23 Replace list filename fixed. Paths changed.
+|  |     
+|  |   
+|  +--Comment...
+|     |  Restrict and transliterate
+|     |  
+|     |  The replace list was updated as per advice from The Translation Trust
+|     |  
+|     |  See
+|     |  T:\Custom\Turkish\Kiril_harflerine.PCRE.tab
+|     |  which was derived from
+|     |  T:\Custom\Turkish\Kiril_harflerine.tab
+|     |  
+|     |  Scope: USFM files in compliance with USFM 2.3
+|     |
+|     +--Restrict to lines NOT matching [^\\(id|rem|restore)]
+|        |  [ ] Include line numbers
+|        |  [ ] Include filename
+|        |  [X] Match case
+|        |  [ ] Count matches
+|        |  Pattern type: 0
+|        |  [X] UTF8 Support
+|        |  [ ] Ignore empty matches
+|        |  Context before: 0
+|        |  Context after: 0
+|        |
+|        +--Perl pattern [\\[a-z]{1,3}] and Send non-matching to subfilter
+|           |  [X] Match case
+|           |  [ ] Whole words only
+|           |  [ ] Case sensitive replace
+|           |  [ ] Prompt on replace
+|           |  [ ] Skip prompt if identical
+|           |  [ ] First only
+|           |  [ ] Extract matches
+|           |      Maximum text buffer size 4096
+|           |  [X] Maximum match (greedy)
+|           |  [ ] Allow comments
+|           |  [ ] '.' matches newline
+|           |  [X] UTF-8 Support
+|           |
+|           +--Replace list: T:\Custom\Turkish\Kiril_harflerine.PCRE.tab Perl pattern
+|                 [X] Match case
+|                 [ ] Whole words only
+|                 [ ] Case sensitive replace
+|                 [ ] Prompt on replace
+|                 [ ] Skip prompt if identical
+|                 [ ] First only
+|                 [ ] Extract matches
+|                     Maximum text buffer size 4096
+|                 [ ] Maximum match (greedy)
+|                 [ ] Allow comments
+|                 [ ] '.' matches newline
+|                 [X] UTF-8 Support
+
+|                 [X] Process longest strings first
+|                 [ ] Simultaneous search
+|                 [ ] Log summary only
+|               
++--Output to file(s)
+      [ ] Only update date on changed files
+      [ ] Append mode
+      [ ] Change extension to: .txt
+      [ ] Open output file
+      Only output modified files
+      Output folder: o:\
+      [ ] Maintain folder structure
+      [ ] Remove empty output files    
+
+Files List
+----------
+i:\*.sfm
